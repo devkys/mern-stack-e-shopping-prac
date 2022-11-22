@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-function Navbar() {
+function Navbar({click}) {
   return (
     <div className="navbar">
       {/* logo */}
@@ -11,10 +11,12 @@ function Navbar() {
       {/* links */}
       <ul className="navbar__links">
         <li>
-          <Link to="/cart">
+          <Link to="/cart" className="cart__link">
             <i className="fas fa-shopping-cart"></i>
-            Cart
-            <span className="cartlogo__badge">0</span>
+            <span>
+              Cart
+              <span className="cartlogo__badge">0</span>
+            </span>
           </Link>
         </li>
         <li>
@@ -22,8 +24,7 @@ function Navbar() {
         </li>
       </ul>
       {/* hamburger menu */}
-      <div className="hamburger__menu">
-        <div></div>
+      <div className="hamburger__menu" onClick={click}>
         <div></div>
         <div></div>
         <div></div>

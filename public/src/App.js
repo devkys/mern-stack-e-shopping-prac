@@ -17,19 +17,19 @@ function App() {
   return (
     <BrowserRouter>
       {/* Navbar */}
-      < Navbar click={() => setSideToggle(true)}/>
+      <Navbar click={() => setSideToggle(true)} />
       {/* sideDrawer */}
-      < SideDrawer  show={sideToggle}/>
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       {/* Backdrop */}
-      < Backdrop show={sideToggle} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main>
         <Routes>
-          <Route exact path="/" element={ <HomeScreen />} />
-          <Route exact path="/product/:id" element={ <ProductScreen /> } />
-          <Route exact path="/cart" element={ <CartScreen /> } />
+          <Route exact path="/" element={<HomeScreen />} />
+          <Route exact path="/product/:id" element={<ProductScreen />} />
+          <Route exact path="/cart" element={<CartScreen />} />
         </Routes>
       </main>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 
